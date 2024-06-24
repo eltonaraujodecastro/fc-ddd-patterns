@@ -1,4 +1,5 @@
 export default class OrderItem {
+
   private _id: string;
   private _productId: string;
   private _name: string;
@@ -43,5 +44,10 @@ export default class OrderItem {
 
   total(): number {
     return this._price * this._quantity
+  }
+
+  changeQuantity(quantity: number) {
+    this._quantity = quantity;
+    this._total = this.total();
   }
 }
